@@ -1,0 +1,127 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+  }
+  
+  /* Body style */
+  body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff; /* White background for the body */
+  }
+  
+  /* Clock container style */
+  .clock {
+    background: linear-gradient(120deg, #000, #333); /* Black and dark gray gradient */
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    box-shadow: -20px -20px 60px rgba(0, 0, 0, 0.3),
+                20px 20px 20px -5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Inner wrapper style */
+  .wrapper {
+    width: 390px;
+    height: 390px;
+    background: linear-gradient(to top, #000, #333); /* Black and dark gray gradient */
+    border-radius: 50%;
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.5),
+                inset 20px 20px 40px rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  /* Clock numbers */
+  .wrapper label {
+    position: absolute;
+    transform: rotate(calc(var(--i) * (360deg / 12)));
+    inset: 16px;
+    text-align: center;
+  }
+  
+  .wrapper label span {
+    transform: rotate(calc(var(--i) * (-360deg / 12)));
+    display: inline-block;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff; /* White color for numbers */
+  }
+  
+  /* Clock center point */
+  .point {
+    width: 25px;
+    height: 25px;
+    background: #fff; /* White color for center point */
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
+  }
+  
+  .point::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #FF4500; /* Orange center point */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 3px rgba(255, 69, 0, 0.6);
+    z-index: 4;
+  }
+  
+  /* Clock hands */
+  .stalk-second,
+  .stalk-minute,
+  .stalk-hour {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+  }
+  
+  .stalk-second {
+    width: 2px;
+    height: 160px;
+    background: #FF4500; /* Orange second hand */
+    box-shadow: 1px 1px 3px rgba(255, 69, 0, 0.6);
+    z-index: 3;
+  }
+  
+  .stalk-second::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background: #FF4500; /* Orange bottom part of the second hand */
+    bottom: -50px;
+    box-shadow: 1px 1px 3px rgba(255, 69, 0, 0.6);
+  }
+  
+  .stalk-minute {
+    width: 3px;
+    height: 130px;
+    background: #FF4500; /* Orange minute hand */
+    box-shadow: 1px 1px 3px rgba(255, 69, 0, 0.6);
+    z-index: 2;
+  }
+  
+  .stalk-hour {
+    width: 4px;
+    height: 100px;
+    background: #FF4500; /* Orange hour hand */
+    box-shadow: 1px 1px 3px rgba(255, 69, 0, 0.6);
+    z-index: 1;
+  }
+  
